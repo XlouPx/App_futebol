@@ -6,81 +6,59 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>836</width>
-    <height>705</height>
+    <width>600</width>
+    <height>404</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>App_Futebol</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>App_futebol.ico</normaloff>App_futebol.ico</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: #f0f0f0;</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QStackedWidget" name="telaPrincipal">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>20</y>
-      <width>751</width>
-      <height>521</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(163, 206, 255);</string>
-    </property>
-    <property name="currentIndex">
-     <number>4</number>
-    </property>
-    <widget class="QWidget" name="noticias"/>
-    <widget class="QWidget" name="classificacao"/>
-    <widget class="QWidget" name="elenco"/>
-    <widget class="QWidget" name="historia"/>
-    <widget class="QWidget" name="contatos"/>
-   </widget>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QPushButton" name="pushButton">
+      <property name="styleSheet">
+       <string notr="true">	border-width: medium;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    padding: 10px 20px;
+    font-size: 16px;
+</string>
+      </property>
+      <property name="text">
+       <string>Carregar Jogos Ao Vivo</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QTextBrowser" name="textBrowser">
+      <property name="styleSheet">
+       <string notr="true">QTextBrowser {
+    background-color: white;
+    color: black;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    padding: 10px;
+    font-size: 14px;
+    min-height: 200px;
+}</string>
+      </property>
+      <property name="text" stdset="0">
+       <string/>
+      </property>
+     </widget>
+    </item>
+   </layout>
   </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>836</width>
-     <height>24</height>
-    </rect>
-   </property>
-   <widget class="QMenu" name="menuNoticias">
-    <property name="title">
-     <string>Noticias</string>
-    </property>
-   </widget>
-   <widget class="QMenu" name="menuClassifica_o">
-    <property name="title">
-     <string>Classificação</string>
-    </property>
-   </widget>
-   <widget class="QMenu" name="menuElenco">
-    <property name="title">
-     <string>Elenco</string>
-    </property>
-   </widget>
-   <widget class="QMenu" name="menuHistoria_do_time">
-    <property name="title">
-     <string>Historia do time</string>
-    </property>
-   </widget>
-   <widget class="QMenu" name="menucontatos">
-    <property name="title">
-     <string>contatos</string>
-    </property>
-   </widget>
-   <addaction name="menuNoticias"/>
-   <addaction name="menuClassifica_o"/>
-   <addaction name="menuElenco"/>
-   <addaction name="menuHistoria_do_time"/>
-   <addaction name="menucontatos"/>
-  </widget>
-  <action name="actionReal_Madrid">
-   <property name="text">
-    <string>Real Madrid</string>
-   </property>
-  </action>
  </widget>
  <resources/>
  <connections/>
