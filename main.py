@@ -11,10 +11,12 @@ class MeuApp(QMainWindow):
 
         self.listaDeCards = self.gerarCardsDeNoticias()
         noticia = self.listaDeCards[1]
-        # print(self.set_titulo(noticia[0]))
-        self.set_resumo(noticia[1]) 
+        self.set_titulo(self.titulo)
+        self.set_resumo(noticia[1])
+        self.set_link(self.link)
+        print(self.link)
+   
     #pegando noticias
-    
     def procura_site(self, tag, classe):
         url = 'https://ge.globo.com/futebol/futebol-internacional/futebol-espanhol/times/real-madrid/'
         requisicao  = requests.get(url)
@@ -37,18 +39,16 @@ class MeuApp(QMainWindow):
     def get_titulo(self, card):
         # lista_noticias = card.find_all('a', class_= 'feed-post-link')
         titulo_link = card.find_all('a', class_= 'feed-post-link')[0]
-        link = titulo_link.get('href')
-        print(link)
-        titulo = titulo_link.find_all('p')[0].getText()
-        print(titulo)
-        return titulo
+        self.link = titulo_link.get('href')
+        self.titulo = titulo_link.find_all('p')[0].getText()
+        return self.titulo
     
     
     
     def get_resumo(self, card):
-        texto = card.find_all('div', class_= 'feed-post-body-resumo')[0]
+        self.texto = card.find_all('div', class_= 'feed-post-body-resumo')[0]
         resumo = ''
-        for linha in texto:
+        for linha in self.texto:
             resumo += linha.text
         return resumo
     
@@ -58,6 +58,9 @@ class MeuApp(QMainWindow):
 
     def set_resumo(self, resumo):
         self.btnResumo.setText(resumo)
+
+    def set_link(self,link):
+        self.btnLink.setText(link)
 
     def btn_descer(self):
         self.titulo = self.get_titulo()
