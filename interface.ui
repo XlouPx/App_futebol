@@ -6,50 +6,279 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>500</width>
-    <height>400</height>
+    <width>930</width>
+    <height>474</height>
    </rect>
   </property>
+  <property name="maximumSize">
+   <size>
+    <width>930</width>
+    <height>474</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
   <property name="styleSheet">
-   <string notr="true">background-color: #f0f0f0;</string>
+   <string notr="true">background-color: white</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QVBoxLayout" name="verticalLayout">
-    <item>
-     <widget class="QLabel" name="btnTitulo">
-      <property name="font">
-       <font>
-        <pointsize>12</pointsize>
-        <weight>75</weight>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: white;
-    font-weight: bold;
-    font-size: 12px;
-    background-color: #007bff;
-    border-radius: 5px;
-    padding: 10px 20px;
-    border: 2px solid #007bff;</string>
-      </property>
-      <property name="text">
-       <string>Título da Notícia</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QTextEdit" name="btnResumo">
-      <property name="styleSheet">
-       <string notr="true">
+   <widget class="QWidget" name="widget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>911</width>
+      <height>451</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">rgba (0,0,0,0)
+background-color: white</string>
+    </property>
+    <widget class="QLabel" name="logo">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>91</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>Real Madrid.jpg</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="noticias">
+     <property name="geometry">
+      <rect>
+       <x>130</x>
+       <y>10</y>
+       <width>91</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>18</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Noticias</string>
+     </property>
+     <property name="autoDefault">
+      <bool>false</bool>
+     </property>
+     <property name="default">
+      <bool>false</bool>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="classificacao">
+     <property name="geometry">
+      <rect>
+       <x>230</x>
+       <y>20</y>
+       <width>111</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>18</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>História</string>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="elenco">
+     <property name="geometry">
+      <rect>
+       <x>360</x>
+       <y>20</y>
+       <width>75</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>18</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Elenco</string>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_yt">
+     <property name="geometry">
+      <rect>
+       <x>550</x>
+       <y>0</y>
+       <width>75</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>btn_yt</string>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_face">
+     <property name="geometry">
+      <rect>
+       <x>610</x>
+       <y>10</y>
+       <width>75</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>btn_face</string>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btnDescer">
+     <property name="geometry">
+      <rect>
+       <x>710</x>
+       <y>0</y>
+       <width>81</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="text">
+      <string>btnProximo</string>
+     </property>
+     <property name="default">
+      <bool>false</bool>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_insta">
+     <property name="geometry">
+      <rect>
+       <x>620</x>
+       <y>30</y>
+       <width>81</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">&lt;link href=&quot;https://www.instagram.com/realmadrid/&quot; rel=&quot;stykesheet&quot;&gt;</string>
+     </property>
+     <property name="text">
+      <string>btn_insta</string>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btnAnterior">
+     <property name="geometry">
+      <rect>
+       <x>720</x>
+       <y>40</y>
+       <width>75</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>btnAnterior</string>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_twt">
+     <property name="geometry">
+      <rect>
+       <x>550</x>
+       <y>30</y>
+       <width>75</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>btn_twt</string>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QStackedWidget" name="stackedWidget">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>80</y>
+       <width>911</width>
+       <height>371</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>-1</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+       
+QStackedWidget {
+    background-color: white;
+    color: black;
+    border: 2px solid  #daa520;
+    padding: 10px;
+    font-size: 14px;
+}
+
+QStackedWidget:focus {
+    border: 2px solid #007bff;
+}
+</string>
+     </property>
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="page">
+      <widget class="QTextEdit" name="btnResumo">
+       <property name="geometry">
+        <rect>
+         <x>80</x>
+         <y>70</y>
+         <width>421</width>
+         <height>201</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">
        
 QTextEdit {
     background-color: white;
     color: black;
-    border: 2px solid #ccc;
+    border: 2px solid  #daa520;
     border-radius: 20px;
     padding: 10px;
     font-size: 14px;
@@ -59,16 +288,26 @@ QTextEdit:focus {
     border: 2px solid #007bff;
 }
 </string>
-      </property>
-      <property name="readOnly">
-       <bool>true</bool>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="btnDescer">
-      <property name="styleSheet">
-       <string notr="true">
+       </property>
+       <property name="html">
+        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:14px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btnLink">
+       <property name="geometry">
+        <rect>
+         <x>100</x>
+         <y>280</y>
+         <width>171</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">
 QPushButton {
     background-color: #007bff;
     color: white;
@@ -86,16 +325,22 @@ QPushButton:pressed {
     background-color: #004080;
 }
 </string>
-      </property>
-      <property name="text">
-       <string>Próxima Notícia</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="btnLink">
-      <property name="styleSheet">
-       <string notr="true">
+       </property>
+       <property name="text">
+        <string>acessar site </string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btnLinkNoticia">
+       <property name="geometry">
+        <rect>
+         <x>310</x>
+         <y>280</y>
+         <width>171</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">
 QPushButton {
     background-color: #007bff;
     color: white;
@@ -113,13 +358,253 @@ QPushButton:pressed {
     background-color: #004080;
 }
 </string>
-      </property>
-      <property name="text">
-       <string>Acessar o site</string>
-      </property>
+       </property>
+       <property name="text">
+        <string>acessar noticias</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="btnTitulo">
+       <property name="geometry">
+        <rect>
+         <x>80</x>
+         <y>20</y>
+         <width>401</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: white;
+    font-weight: bold;
+    font-size: 12px;
+    background-color: #ffff;
+    border-radius: 5px;
+    padding: 10px 20px;
+    border: 2px solid #007bff;
+</string>
+       </property>
+       <property name="text">
+        <string>titulo</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="btnMidias">
+       <property name="geometry">
+        <rect>
+         <x>770</x>
+         <y>40</y>
+         <width>111</width>
+         <height>271</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: white;
+    font-weight: bold;
+    font-size: 12px;
+    background-color: #ffff;
+    border-radius: 5px;
+    padding: 10px 20px;
+    border: 2px solid #ff0000;
+</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btn_Proximo">
+       <property name="geometry">
+        <rect>
+         <x>510</x>
+         <y>70</y>
+         <width>71</width>
+         <height>191</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">
+QPushButton {
+    background-color: #007bff;
+    color: white;
+    border: 2px solid #007bff;
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+QPushButton:hover {
+    background-color: #0056b3;
+}
+
+QPushButton:pressed {
+    background-color: #004080;
+}
+</string>
+       </property>
+       <property name="text">
+        <string>-&gt;</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btnAnterior_2">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>80</y>
+         <width>71</width>
+         <height>181</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">
+QPushButton {
+    background-color: #007bff;
+    color: white;
+    border: 2px solid #007bff;
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+QPushButton:hover {
+    background-color: #0056b3;
+}
+
+QPushButton:pressed {
+    background-color: #004080;
+}
+</string>
+       </property>
+       <property name="text">
+        <string>&lt;-</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="face">
+       <property name="geometry">
+        <rect>
+         <x>790</x>
+         <y>50</y>
+         <width>71</width>
+         <height>61</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>facebook vector logo  black - outline.jpg</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="insta">
+       <property name="geometry">
+        <rect>
+         <x>790</x>
+         <y>110</y>
+         <width>71</width>
+         <height>61</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>0817158f3a05c0d62de647c28f4cde54.jpg</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="youtube">
+       <property name="geometry">
+        <rect>
+         <x>790</x>
+         <y>240</y>
+         <width>71</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>Youtube free icons designed by Freepik.jpg</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="twitter">
+       <property name="geometry">
+        <rect>
+         <x>790</x>
+         <y>170</y>
+         <width>71</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>X Twitter logo PNG, vector files free download - Brandlogos_net.jpg</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <zorder>btnResumo</zorder>
+      <zorder>btnLink</zorder>
+      <zorder>btnLinkNoticia</zorder>
+      <zorder>btnTitulo</zorder>
+      <zorder>btnProximo</zorder>
+      <zorder>btnAnterior_2</zorder>
+      <zorder>btnMidias</zorder>
+      <zorder>face</zorder>
+      <zorder>insta</zorder>
+      <zorder>youtube</zorder>
+      <zorder>twitter</zorder>
      </widget>
-    </item>
-   </layout>
+     <widget class="QWidget" name="page_2">
+      <widget class="QTextEdit" name="textEdit">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>871</width>
+         <height>331</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">
+       
+QTextEdit {
+    background-color: white;
+    color: black;
+    border: 2px solid  #daa520;
+    border-radius: 20px;
+    padding: 10px;
+    font-size: 14px;
+}
+
+QTextEdit:focus {
+    border: 2px solid #007bff;
+}
+
+QtextEdit{
+	text-align: justify;
+}
+</string>
+       </property>
+       <property name="html">
+        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:14px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;O Real Madrid é uma das equipes mais renomadas do mundo do futebol. Fundado em 1902, o clube se estabeleceu como uma força dominante tanto no cenário nacional quanto internacional. Sua sede é na capital espanhola, Madrid.Nos primeiros anos, o clube teve um sucesso moderado, mas em 1950, com a chegada do lendário jogador Alfredo Di Stéfano, o Real Madrid começou a sua era de ouro. Sob a liderança do treinador argentino Helenio Herrera, o clube conquistou cinco títulos da Liga dos Campeões da UEFA consecutivos entre 1955 e 1960, um feito inigualável até hoje.Nos anos seguintes, o clube continuou a acumular títulos, tanto na Espanha quanto na Europa. Figuras como Cristiano Ronaldo, Raúl, Zinedine Zidane, e muitos outros contribuíram para a rica história do clube.Atualmente, o Real Madrid continua sendo uma potência do futebol mundial, competindo na La Liga e na Liga dos Campeões da UEFA, sempre buscando adicionar mais troféus à sua vasta coleção. Sua camisa branca icônica e sua história de sucesso fazem do Real Madrid uma das equipes mais reconhecidas e respeitadas do planeta.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+   </widget>
   </widget>
  </widget>
  <resources/>

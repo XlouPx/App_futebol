@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>500</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: #f0f0f0;</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QLabel" name="btnTitulo">
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: white;
+    font-weight: bold;
+    font-size: 12px;
+    background-color: #007bff;
+    border-radius: 5px;
+    padding: 10px 20px;
+    border: 2px solid #007bff;</string>
+      </property>
+      <property name="text">
+       <string>Título da Notícia</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QTextEdit" name="btnResumo">
+      <property name="styleSheet">
+       <string notr="true">
+       
+QTextEdit {
+    background-color: white;
+    color: black;
+    border: 2px solid #ccc;
+    border-radius: 20px;
+    padding: 10px;
+    font-size: 14px;
+}
+
+QTextEdit:focus {
+    border: 2px solid #007bff;
+}
+</string>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="btnDescer">
+      <property name="styleSheet">
+       <string notr="true">
+QPushButton {
+    background-color: #007bff;
+    color: white;
+    border: 2px solid #007bff;
+    border-radius: 15px;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+QPushButton:hover {
+    background-color: #0056b3;
+}
+
+QPushButton:pressed {
+    background-color: #004080;
+}
+</string>
+      </property>
+      <property name="text">
+       <string>Próxima Notícia</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="btnLink">
+      <property name="styleSheet">
+       <string notr="true">
+QPushButton {
+    background-color: #007bff;
+    color: white;
+    border: 2px solid #007bff;
+    border-radius: 15px;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+QPushButton:hover {
+    background-color: #0056b3;
+}
+
+QPushButton:pressed {
+    background-color: #004080;
+}
+</string>
+      </property>
+      <property name="text">
+       <string>Acessar o site</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

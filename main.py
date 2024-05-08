@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 from PyQt5.QtWidgets import *
 from PyQt5.uic import loadUi
-from PyQt5.QtCore import QUrl
+from PyQt5.QtCore import QUrl, Qt
 from PyQt5.QtGui import QDesktopServices
 
 class MeuApp(QMainWindow):
@@ -13,8 +13,8 @@ class MeuApp(QMainWindow):
         # Inicializar o índice da notícia atual com 1
         self.indice_noticia_atual = 1
         
-        # Conectar o botão ao método btn_descer
-        self.btnDescer.clicked.connect(self.btn_descer)
+        # Conectar o botão ao método btnProximo
+        self.btn_Proximo.clicked.connect(self.btnProximo)
 
         # Gerar os cards de notícias e exibir a primeira notícia
         self.listaDeCards = self.gerarCardsDeNoticias()
@@ -22,7 +22,11 @@ class MeuApp(QMainWindow):
         
         # Conectar o botão para abrir o link da notícia
         self.btnLink.clicked.connect(self.abrirLink)
-   
+
+        # deixa a interface(propria do qt) transparerente
+        self.setWindowFlags(Qt.FramelessWindowHint)
+        self.setAttribute(Qt.WA_TranslucentBackground)
+                              
     # Função para procurar notícias no site
     def procura_site(self, tag, classe):
         url = 'https://ge.globo.com/futebol/futebol-internacional/futebol-espanhol/times/real-madrid/'
@@ -68,7 +72,7 @@ class MeuApp(QMainWindow):
         self.set_link(link)
         
     # Atualizar a exibição para a próxima notícia
-    def btn_descer(self):
+    def btnProximo(self):
         self.indice_noticia_atual += 1
         if self.indice_noticia_atual <= len(self.listaDeCards):
             self.exibirNoticiaAtual()
