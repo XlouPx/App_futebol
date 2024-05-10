@@ -1,67 +1,133 @@
-from PyQt5.QtWidgets import QApplication, QMainWindow, QTextBrowser, QMessageBox
+import requests
+from bs4 import BeautifulSoup
+from PyQt5.QtWidgets import *
 from PyQt5.uic import loadUi
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-import os
+from PyQt5.QtCore import QUrl, Qt
+from PyQt5.QtGui import QDesktopServices
 
 class MeuApp(QMainWindow):
     def __init__(self):
         super().__init__()
-        loadUi(self.localPath('interface.ui'), self)
-        self.pushButton.clicked.connect(self.iniciar_raspagem)
+        loadUi('interface.ui', self)
+        
+        # Inicializar o índice da notícia atual com 0
+        self.indice_noticia_atual = 0
+        
+        # Conectando o sinal clicked do botão ao método
+        self.btnProximo.clicked.connect(self.btn_Proximo)
+        self.btnAnterior.clicked.connect(self.btn_Anterior)
+        self.btnFechar.clicked.connect(self.btn_Fechar)
+        self.btnHistoria.clicked.connect(self.btn_Historia)
+        self.btnHome.clicked.connect(self.btn_Home)
+        self.btnJogadores.clicked.connect(self.btn_Jogadores) 
+        self.btnNoticias.clicked.connect(self.btn_Noticias)
 
-    def localPath(self, relativo):
-        return os.path.join(os.path.dirname(os.path.realpath(__file__)), relativo)
+        # Gerar os cards de notícias e exibir a primeira notícia
+        self.listaDeCards = self.gerarCardsDeNoticias()
+        self.exibirNoticiaAtual()
+        
+        # Conectar o botão para abrir o link da notícia
+        self.btnLink.clicked.connect(self.abrirLink)
 
-    def iniciar_raspagem(self):
-        self.textBrowser.clear()
-        self.textBrowser.append("Iniciando a Coleta de dados...")
-        self.executar_raspagem()
+        # Deixa a interface transparente
+        self.setWindowFlags(Qt.FramelessWindowHint)
+        self.setAttribute(Qt.WA_TranslucentBackground)
+                              
+    # Função para procurar notícias no site
+    def procura_site(self, tag, classe):
+        url = 'https://ge.globo.com/futebol/futebol-internacional/futebol-espanhol/times/real-madrid/'
+        requisicao  = requests.get(url)
+        pagina = BeautifulSoup(requisicao.text, 'html.parser')
+        lista_noticias = pagina.find_all(tag, class_= classe)
+        return lista_noticias
+    
+    # Gerar os cards de notícias
+    def gerarCardsDeNoticias(self):
+        cards = [] 
+        for card in self.get_noticias():
+            titulo, resumo, link = self.get_detalhes_noticia(card)
+            cards.append((titulo, resumo, link))
+        return cards
+    
+    # Obter notícias do site
+    def get_noticias(self):
+        return self.procura_site('div', 'feed-post-body')
+    
+    # Obter detalhes (título, resumo e link) de uma notícia
+    def get_detalhes_noticia(self, card):
+        titulo_link = card.find_all('a', class_= 'feed-post-link')[0]
+        link = titulo_link.get('href')
+        titulo = titulo_link.find_all('p')[0].getText()
+        resumo = self.get_resumo(card)
+        return titulo, resumo, link
+    
+    # Obter o resumo de uma notícia
+    def get_resumo(self, card):
+        texto = card.find_all('div', class_= 'feed-post-body-resumo')[0].text
+        return texto
+    
+    # Exibir a notícia atual no aplicativo
+    def exibirNoticiaAtual(self):
+        noticia_atual = self.listaDeCards[self.indice_noticia_atual]
+        titulo, resumo, link = noticia_atual
+        self.setTitulo(titulo)  
+        self.setResumo(resumo)  
+        self.setLink(link)     
+    
+    # Atualizar a exibição para a próxima notícia
+    def btn_Proximo(self):
+        self.indice_noticia_atual += 1
+        if self.indice_noticia_atual < len(self.listaDeCards):
+            self.exibirNoticiaAtual()
+        else:
+            self.indice_noticia_atual = 0
 
-    def executar_raspagem(self):
-        chrome_options = webdriver.ChromeOptions()
-        chrome_options.add_argument('--start-minimized')
+    # Volta a exibição para a notícia anterior
+    def btn_Anterior(self):
+        self.indice_noticia_atual -= 1
+        if self.indice_noticia_atual >= 0:
+            self.exibirNoticiaAtual()
+        else:
+            self.indice_noticia_atual = len(self.listaDeCards) - 1
 
-        try:
-            # Criando e configurando o driver do Chrome
-            driver = webdriver.Chrome(options=chrome_options)
-            driver.minimize_window()
-            driver.get('https://www.playscores.com/scanner-futebol-online/ao-vivo')
-            driver.implicitly_wait(10)
-            
-            # Encontrando os elementos dos jogos
-            elements = driver.find_elements(By.CSS_SELECTOR, 'app-fixture-list-line.ng-star-inserted')
-            total_jogos = len(elements)
+    # Métodos para definir o título, resumo e link no aplicativo
+    def setTitulo(self, titulo):  
+        self.btnTitulo.setText(titulo)  
 
-            # Processando as informações dos jogos
-            dados = [self.processar_informacoes_jogo(jogo, indice) for indice, jogo in enumerate(elements, start=1)]
-            self.mostrar_resultados(dados, total_jogos)
+    def setResumo(self, resumo):  
+        self.btnResumo.setText(resumo)  
 
-        except Exception as e:
-            QMessageBox.critical(self, "Erro", f"Erro ao iniciar a raspagem: {e}")
-        finally:
-            driver.quit()
+    def setLink(self, link):  
+        self.btnLink.setText("Acessar notícia")  
+        self.link_noticia = link
+        
+    # Método para abrir o link da notícia
+    def abrirLink(self):
+        if hasattr(self, 'link_noticia'):
+            QDesktopServices.openUrl(QUrl(self.link_noticia))
 
-    def processar_informacoes_jogo(self, jogo, indice):
-        try:
-            # Dividindo as linhas de informações do jogo
-            linhas = jogo.text.split('\n')
-            # Extraindo as informações relevantes
-            inf = [linha.split(':')[-1].strip() for linha in linhas[1:]]
-            # Verificando se todas as informações necessárias estão presentes
-            if all(inf[2:4]):
-                return f'<p>{indice}. Jogo: {inf[0]} x {inf[1]}  Placar: {inf[2]} - {inf[3]}</p>\n'
-        except Exception as e:
-            print(f"Erro ao processar informações do jogo: {e}")
-        return None
+    # Função para fechar a janela
+    def btn_Fechar(self):
+        self.close()
 
-    def mostrar_resultados(self, dados, total_jogos):
-        self.textBrowser.clear()
-        self.textBrowser.append(f"Total de jogos encontrados: {total_jogos}\n")
-        self.textBrowser.append('\n'.join(filter(None, dados)))
+    # Função para mostrar a história
+    def btn_Historia(self):
+        pass
+
+    # Função para mostrar a página inicial
+    def btn_Home(self):
+        pass
+
+    # Função para mostrar informações sobre os Melhores jogadores
+    def btn_Jogadores(self):
+        pass
+
+    # Função para mostrar as notícias
+    def btn_Noticias(self):
+        pass
 
 if __name__ == '__main__':
     app = QApplication([])
-    janela = MeuApp()
-    janela.show()
+    window = MeuApp()
+    window.show()
     app.exec_()

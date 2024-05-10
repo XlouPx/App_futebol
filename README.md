@@ -64,9 +64,9 @@ Para usar o App_Futebol, siga estas etapas:
 python main.py  ||  python3 main.py
 ```
 
-## 📫 Contribuindo para Calculadora Iphone
+## 📫 Contribuindo para o App_Futebol
 
-Para contribuir com Calculadora Iphone, siga estas etapas:
+Para contribuir com App_Futebol, siga estas etapas:
 
 1. Bifurque este repositório.
 2. Crie um branch: `git checkout -b App_futebol`.
