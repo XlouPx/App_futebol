@@ -27,10 +27,10 @@ class Raspadura:
     # Obter detalhes (título, resumo e link) de uma notícia
     def get_detalhes_noticia(self, card):
         titulo_link = card.find_all('a', class_= 'feed-post-link')[0]
-        link = titulo_link.get('href')
+        self.link = titulo_link.get('href')
         titulo = titulo_link.find_all('p')[0].getText()
         resumo = self.get_resumo(card)
-        return titulo, resumo, link
+        return titulo, resumo, self.link
     
     # Obter o resumo de uma notícia
     def get_resumo(self, card):
@@ -39,22 +39,19 @@ class Raspadura:
     
     # Função de web scrap da noticias inteira
     def get_noticiasFull(self, url):
-        
-        # url = "https://ge.globo.com/futebol/futebol-internacional/noticia/2024/05/09/tchouameni-tem-lesao-confirmada-e-vira-preocupacao-para-final-da-champions.ghtml"
-        textos = self.procura_site(url, 'p', 'content-text__container')
+        full = self.procura_site(url, 'div', 'wall')
+        textos = ''.replace('\n', ' oi')
+        for texto in full:
+            textos = (texto.get_text())
+
         return textos
     
-    
+
 
 if __name__ == "__main__":
     raspador = Raspadura()
     listaDeCards = raspador.gerarCardsDeNoticias()
-    noticia1 = listaDeCards[0]
-    url = noticia1[2]
+    url = raspador.link
     full = raspador.get_noticiasFull(url)
     print(full)
-
-
-    #news = raspador.get_detalhes_noticia()
-    
-    #print()
+   
