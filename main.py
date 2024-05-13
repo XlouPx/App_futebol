@@ -17,10 +17,10 @@ class MeuApp(QMainWindow):
         self.btnProximo.clicked.connect(self.btn_Proximo)
         self.btnAnterior.clicked.connect(self.btn_Anterior)
         self.btnFechar.clicked.connect(self.btn_Fechar)
-        self.btnHistoria.clicked.connect(self.btn_Historia)
-        self.btnHome.clicked.connect(self.btn_Home)
-        self.btnJogadores.clicked.connect(self.btn_Jogadores) 
-        self.btnNoticias.clicked.connect(self.btn_Noticias)
+        self.btnHome.clicked.connect(self.showHome)
+        self.btnHistoria.clicked.connect(self.showHistoria)
+        self.btnLerNoticias.clicked.connect(self.showLerNoticia)
+        self.btnNoticia.clicked.connect(self.showNoticias)
 
         # Gerar os cards de notícias e exibir a primeira notícia
         self.listaDeCards = self.gerarCardsDeNoticias()
@@ -29,7 +29,7 @@ class MeuApp(QMainWindow):
         # Conectar o botão para abrir o link da notícia
         self.btnLink.clicked.connect(self.abrirLink)
 
-        # Deixa a interface transparente
+        # Deixa a interface (própria do Qt) transparente
         self.setWindowFlags(Qt.FramelessWindowHint)
         self.setAttribute(Qt.WA_TranslucentBackground)
                               
@@ -106,28 +106,30 @@ class MeuApp(QMainWindow):
         if hasattr(self, 'link_noticia'):
             QDesktopServices.openUrl(QUrl(self.link_noticia))
 
+    def clear_noticias(self):
+        self.btnResumo.clear()   
+        self.btnTitulo.clear()   
+
     # Função para fechar a janela
     def btn_Fechar(self):
         self.close()
 
-    # Função para mostrar a história
-    def btn_Historia(self):
-        pass
+    def showHome(self):
+        self.stackedWidget.setCurrentIndex(0)
 
-    # Função para mostrar a página inicial
-    def btn_Home(self):
-        pass
+    def showHistoria(self):
+        self.stackedWidget.setCurrentIndex(1)
 
-    # Função para mostrar informações sobre os Melhores jogadores
-    def btn_Jogadores(self):
-        pass
+    def showLerNoticia(self):
+        self.stackedWidget.setCurrentIndex(2)
 
-    # Função para mostrar as notícias
-    def btn_Noticias(self):
-        pass
+    def showNoticias(self):
+        self.stackedWidget.setCurrentIndex(3)
+
 
 if __name__ == '__main__':
     app = QApplication([])
     window = MeuApp()
     window.show()
     app.exec_()
+

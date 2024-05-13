@@ -31,6 +31,10 @@
   <property name="windowTitle">
    <string>App_Futebol</string>
   </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>App_futebol.ico</normaloff>App_futebol.ico</iconset>
+  </property>
   <property name="toolTipDuration">
    <number>12</number>
   </property>
@@ -40,6 +44,14 @@
   <widget class="QWidget" name="centralwidget">
    <property name="toolTipDuration">
     <number>12</number>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget {
+    background-color: #f8f9fa;
+    color: #343a40;
+    padding: 10px;
+    font-size: 14px;
+}</string>
    </property>
    <widget class="QGroupBox" name="groupBox">
     <property name="geometry">
@@ -65,44 +77,42 @@
     <widget class="QPushButton" name="btnFechar">
      <property name="geometry">
       <rect>
-       <x>770</x>
-       <y>10</y>
-       <width>101</width>
-       <height>81</height>
+       <x>780</x>
+       <y>20</y>
+       <width>81</width>
+       <height>61</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>-1</pointsize>
+       <pointsize>14</pointsize>
       </font>
+     </property>
+     <property name="toolTipDuration">
+      <number>14</number>
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
-    background-color: #ffffff;
-    color: #007bff;
-
+    background-color: #dc3545;
+    color: white;
+    border: 2px solid #dc3545;
+    border-radius: 15px;
     padding: 10px 20px;
     font-size: 16px;
     margin-top: 10px;
 }
 
-QPushButton:hove {
-    background-color: #e5e5e5;
-    color: #0056b3;
+QPushButton:hover {
+    background-color: #c82333;
 }
 
-QPushButton:presse {
-    background-color: #c6c6c6;
-    color: #004080;
+QPushButton:pressed {
+    background-color: #bd2130;
 }
 </string>
      </property>
      <property name="text">
-      <string/>
-     </property>
-     <property name="icon">
-      <iconset>
-       <normaloff>../../../../../../Users/brunomendes/Downloads/icons/fechar3.png</normaloff>../../../../../../Users/brunomendes/Downloads/icons/fechar3.png</iconset>
+      <string>X</string>
      </property>
      <property name="iconSize">
       <size>
@@ -119,13 +129,13 @@ QPushButton:presse {
       <rect>
        <x>20</x>
        <y>110</y>
-       <width>861</width>
+       <width>871</width>
        <height>371</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>-1</pointsize>
+       <pointsize>14</pointsize>
       </font>
      </property>
      <property name="toolTipDuration">
@@ -146,7 +156,7 @@ QStackedWidget:focus {
 </string>
      </property>
      <property name="currentIndex">
-      <number>3</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="home">
       <widget class="QTextEdit" name="btnResumoHome">
@@ -175,8 +185,9 @@ QStackedWidget:focus {
         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'.AppleSystemUIFont'; font-size:14px; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2';&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:14px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;Home&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
      </widget>
@@ -210,13 +221,13 @@ p, li { white-space: pre-wrap; }
         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'.AppleSystemUIFont'; font-size:14px; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2';&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:14px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;Historia&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
      </widget>
      <widget class="QWidget" name="Jogadores">
-      <widget class="QTextEdit" name="btnResumoJogadores">
+      <widget class="QTextEdit" name="btnLerNoticia">
        <property name="geometry">
         <rect>
          <x>0</x>
@@ -242,8 +253,8 @@ p, li { white-space: pre-wrap; }
         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'.AppleSystemUIFont'; font-size:14px; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2';&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:14px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
      </widget>
@@ -251,39 +262,12 @@ p, li { white-space: pre-wrap; }
       <property name="toolTipDuration">
        <number>12</number>
       </property>
-      <widget class="QLabel" name="btnTitulo">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>10</y>
-         <width>821</width>
-         <height>81</height>
-        </rect>
-       </property>
-       <property name="toolTipDuration">
-        <number>12</number>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QLabel {
-    background-color: #f8f9fa;
-    color: #343a40;
-    border: 2px solid #6c757d;
-    border-radius: 20px;
-    padding: 8px; 
-    font-size: 18px;
-    margin-bottom: 20px;
-}</string>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-      </widget>
       <widget class="QPushButton" name="btnLink">
        <property name="geometry">
         <rect>
-         <x>110</x>
+         <x>70</x>
          <y>290</y>
-         <width>211</width>
+         <width>321</width>
          <height>51</height>
         </rect>
        </property>
@@ -292,9 +276,9 @@ p, li { white-space: pre-wrap; }
        </property>
        <property name="styleSheet">
         <string notr="true">QPushButton {
-    background-color: #007bff;
+    background-color: #4e7dab;
     color: white;
-    border: 2px solid #007bff;
+    border: 2px solid #4e7dab;
     border-radius: 15px;
     padding: 10px 20px;
     font-size: 16px;
@@ -302,25 +286,25 @@ p, li { white-space: pre-wrap; }
 }
 
 QPushButton:hover {
-    background-color: #0056b3;
+    background-color: #355d88; 
 }
 
 QPushButton:pressed {
-    background-color: #004080;
+    background-color: #27415f;
 }
 </string>
        </property>
        <property name="text">
-        <string>Acessar Site</string>
+        <string>Acessar o Site</string>
        </property>
       </widget>
       <widget class="QTextEdit" name="btnResumo">
        <property name="geometry">
         <rect>
-         <x>130</x>
-         <y>80</y>
-         <width>571</width>
-         <height>211</height>
+         <x>70</x>
+         <y>60</y>
+         <width>701</width>
+         <height>231</height>
         </rect>
        </property>
        <property name="toolTipDuration">
@@ -340,65 +324,32 @@ QPushButton:pressed {
         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'.AppleSystemUIFont'; font-size:14px; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2';&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="btnLinkNoticia">
-       <property name="geometry">
-        <rect>
-         <x>470</x>
-         <y>290</y>
-         <width>231</width>
-         <height>51</height>
-        </rect>
-       </property>
-       <property name="toolTipDuration">
-        <number>12</number>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QPushButton {
-    background-color: #007bff;
-    color: white;
-    border: 2px solid #007bff;
-    border-radius: 15px;
-    padding: 10px 20px;
-    font-size: 16px;
-    margin-top: 10px;
-}
-
-QPushButton:hover {
-    background-color: #0056b3;
-}
-
-QPushButton:pressed {
-    background-color: #004080;
-}
-</string>
-       </property>
-       <property name="text">
-        <string>Acessar Notícias</string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:14px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
       <widget class="QPushButton" name="btnProximo">
        <property name="geometry">
         <rect>
-         <x>720</x>
-         <y>130</y>
-         <width>101</width>
-         <height>71</height>
+         <x>780</x>
+         <y>60</y>
+         <width>61</width>
+         <height>231</height>
         </rect>
        </property>
        <property name="font">
         <font>
-         <pointsize>-1</pointsize>
+         <pointsize>14</pointsize>
         </font>
+       </property>
+       <property name="toolTipDuration">
+        <number>14</number>
        </property>
        <property name="styleSheet">
         <string notr="true">QPushButton {
-    background-color: #007bff;
-    color: white;
-    border: 2px solid #007bff;
+    background-color: #ffc107;
+    color: #343a40;
+    border: 2px solid #ffc107;
     border-radius: 15px;
     padding: 10px 20px;
     font-size: 16px;
@@ -406,16 +357,16 @@ QPushButton:pressed {
 }
 
 QPushButton:hover {
-    background-color: #0056b3;
+    background-color: #ffca28;
 }
 
 QPushButton:pressed {
-    background-color: #004080;
+    background-color: #ffcd38;
 }
 </string>
        </property>
        <property name="text">
-        <string>Próximo</string>
+        <string>&gt;</string>
        </property>
        <property name="flat">
         <bool>true</bool>
@@ -424,22 +375,37 @@ QPushButton:pressed {
       <widget class="QPushButton" name="btnAnterior">
        <property name="geometry">
         <rect>
-         <x>10</x>
-         <y>130</y>
-         <width>101</width>
-         <height>61</height>
+         <x>0</x>
+         <y>70</y>
+         <width>61</width>
+         <height>221</height>
         </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="baseSize">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
        </property>
        <property name="font">
         <font>
-         <pointsize>-1</pointsize>
+         <pointsize>14</pointsize>
         </font>
+       </property>
+       <property name="toolTipDuration">
+        <number>14</number>
        </property>
        <property name="styleSheet">
         <string notr="true">QPushButton {
-    background-color: #007bff;
-    color: white;
-    border: 2px solid #007bff;
+    background-color: #ffc107;
+    color: #343a40;
+    border: 2px solid #ffc107;
     border-radius: 15px;
     padding: 10px 20px;
     font-size: 16px;
@@ -447,173 +413,235 @@ QPushButton:pressed {
 }
 
 QPushButton:hover {
-    background-color: #0056b3;
+    background-color: #ffca28;
 }
 
 QPushButton:pressed {
-    background-color: #004080;
+    background-color: #ffcd38;
 }
 </string>
        </property>
        <property name="text">
-        <string>Anterior</string>
+        <string>&lt;</string>
        </property>
        <property name="flat">
         <bool>true</bool>
        </property>
       </widget>
-     </widget>
-    </widget>
-    <widget class="QToolButton" name="toolButton_4">
-     <property name="geometry">
-      <rect>
-       <x>540</x>
-       <y>10</y>
-       <width>131</width>
-       <height>61</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QToolButton {
-    background-color: #007bff;
+      <widget class="QTextEdit" name="btnTitulo">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>0</y>
+         <width>781</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="toolTipDuration">
+        <number>12</number>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QTextEdit {
+    background-color: #f8f9fa;
+    color: #343a40;
+    border: 2px solid #6c757d;
+    border-radius: 20px;
+    padding: 8px;
+    font-size: 18px;
+}</string>
+       </property>
+       <property name="html">
+        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:18px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:14px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btnLerNoticias">
+       <property name="geometry">
+        <rect>
+         <x>450</x>
+         <y>290</y>
+         <width>331</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="toolTipDuration">
+        <number>12</number>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    background-color: #4e7dab;
     color: white;
-    border: 2px solid #007bff;
+    border: 2px solid #4e7dab;
     border-radius: 15px;
     padding: 10px 20px;
     font-size: 16px;
     margin-top: 10px;
 }
 
-QToolButton:hover {
-    background-color: #0056b3;
+QPushButton:hover {
+    background-color: #355d88; 
 }
 
-QToolButton:pressed {
-    background-color: #004080;
+QPushButton:pressed {
+    background-color: #27415f;
+}
+</string>
+       </property>
+       <property name="text">
+        <string>Ler Noticia</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QLabel" name="Menu">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>10</y>
+       <width>871</width>
+       <height>111</height>
+      </rect>
+     </property>
+     <property name="toolTipDuration">
+      <number>12</number>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel {
+    background-color: #f8f9fa;
+    color: #1f2124;
+    border: 2px solid #6c757d;
+    padding: 8px; 
+    font-size: 18px;
+    margin-bottom: 20px;
+}</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btnHistoria">
+     <property name="geometry">
+      <rect>
+       <x>510</x>
+       <y>20</y>
+       <width>231</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="toolTipDuration">
+      <number>12</number>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+    background-color: #0d6efd;
+    color: white;
+    border: 2px solid #0d6efd;
+    border-radius: 15px;
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+QPushButton:hover  {
+    background-color: #0b5ed7;
+}
+
+QPushButton:pressed {
+    background-color: #0a58c2;
 }
 </string>
      </property>
      <property name="text">
-      <string>Notícias</string>
+      <string>Historia</string>
      </property>
-     <attribute name="buttonGroup">
-      <string notr="true">buttonGroup</string>
-     </attribute>
     </widget>
-    <widget class="QToolButton" name="toolButton">
+    <widget class="QPushButton" name="btnNoticia">
      <property name="geometry">
       <rect>
-       <x>23</x>
-       <y>10</y>
-       <width>131</width>
+       <x>270</x>
+       <y>20</y>
+       <width>231</width>
        <height>61</height>
       </rect>
      </property>
+     <property name="toolTipDuration">
+      <number>12</number>
+     </property>
      <property name="styleSheet">
-      <string notr="true">QToolButton {
-    background-color: #007bff;
+      <string notr="true">QPushButton {
+    background-color: #0d6efd;
     color: white;
-    border: 2px solid #007bff;
+    border: 2px solid #0d6efd;
     border-radius: 15px;
     padding: 10px 20px;
     font-size: 16px;
     margin-top: 10px;
 }
 
-QToolButton:hover {
-    background-color: #0056b3;
+QPushButton:hover  {
+    background-color: #0b5ed7;
 }
 
-QToolButton:pressed {
-    background-color: #004080;
+QPushButton:pressed {
+    background-color: #0a58c2;
+}
+</string>
+     </property>
+     <property name="text">
+      <string>Noticias</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btnHome">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>20</y>
+       <width>231</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="toolTipDuration">
+      <number>12</number>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+    background-color: #0d6efd;
+    color: white;
+    border: 2px solid #0d6efd;
+    border-radius: 15px;
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+QPushButton:hover  {
+    background-color: #0b5ed7;
+}
+
+QPushButton:pressed {
+    background-color: #0a58c2;
 }
 </string>
      </property>
      <property name="text">
       <string>Home</string>
      </property>
-     <attribute name="buttonGroup">
-      <string notr="true">buttonGroup</string>
-     </attribute>
     </widget>
-    <widget class="QToolButton" name="toolButton_2">
-     <property name="geometry">
-      <rect>
-       <x>187</x>
-       <y>10</y>
-       <width>131</width>
-       <height>61</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QToolButton {
-    background-color: #007bff;
-    color: white;
-    border: 2px solid #007bff;
-    border-radius: 15px;
-    padding: 10px 20px;
-    font-size: 16px;
-    margin-top: 10px;
-}
-
-QToolButton:hover {
-    background-color: #0056b3;
-}
-
-QToolButton:pressed {
-    background-color: #004080;
-}
-</string>
-     </property>
-     <property name="text">
-      <string>História</string>
-     </property>
-     <attribute name="buttonGroup">
-      <string notr="true">buttonGroup</string>
-     </attribute>
-    </widget>
-    <widget class="QToolButton" name="toolButton_3">
-     <property name="geometry">
-      <rect>
-       <x>361</x>
-       <y>10</y>
-       <width>131</width>
-       <height>61</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QToolButton {
-    background-color: #007bff;
-    color: white;
-    border: 2px solid #007bff;
-    border-radius: 15px;
-    padding: 10px 20px;
-    font-size: 16px;
-    margin-top: 10px;
-}
-
-QToolButton:hover {
-    background-color: #0056b3;
-}
-
-QToolButton:pressed {
-    background-color: #004080;
-}
-</string>
-     </property>
-     <property name="text">
-      <string>Jogadores</string>
-     </property>
-     <attribute name="buttonGroup">
-      <string notr="true">buttonGroup</string>
-     </attribute>
-    </widget>
+    <zorder>Menu</zorder>
+    <zorder>btnFechar</zorder>
+    <zorder>stackedWidget</zorder>
+    <zorder>btnHistoria</zorder>
+    <zorder>btnNoticia</zorder>
+    <zorder>btnHome</zorder>
    </widget>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="files.qrc"/>
+  <include location="files1.qrc"/>
+ </resources>
  <connections/>
- <buttongroups>
-  <buttongroup name="buttonGroup"/>
- </buttongroups>
 </ui>
