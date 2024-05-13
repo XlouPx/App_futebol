@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 
 
+
 class Raspadura:
 
     # Função para procurar notícias no site
@@ -39,19 +40,16 @@ class Raspadura:
     
     # Função de web scrap da noticias inteira
     def get_noticiasFull(self, url):
-        full = self.procura_site(url, 'div', 'wall')
-        textos = ''.replace('\n', ' oi')
-        for texto in full:
-            textos = (texto.get_text())
-
+        requisicao  = requests.get(url)
+        pagina = BeautifulSoup(requisicao.text, 'html.parser')
+        textos = [p.get_text() for p in pagina.find_all('p', 'content-text__container')]
+        textos = str(textos).replace('+', '\n-').replace("', '", "").replace("['","").replace("']","")
         return textos
     
-
 
 if __name__ == "__main__":
     raspador = Raspadura()
     listaDeCards = raspador.gerarCardsDeNoticias()
     url = raspador.link
     full = raspador.get_noticiasFull(url)
-    print(full)
-   
+    print(full) 
