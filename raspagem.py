@@ -45,11 +45,3 @@ class Raspadura:
         textos = [p.get_text() for p in pagina.find_all('p', 'content-text__container')]
         textos = str(textos).replace('+', '\n-').replace("', '", "").replace("['","").replace("']","")
         return textos
-    
-
-if __name__ == "__main__":
-    raspador = Raspadura()
-    listaDeCards = raspador.gerarCardsDeNoticias()
-    url = raspador.link
-    full = raspador.get_noticiasFull(url)
-    print(full) 

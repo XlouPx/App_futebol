@@ -24,7 +24,7 @@ class MeuApp(QMainWindow):
         self.btnHistoria.clicked.connect(self.btn_Historia)
         self.btnHome.clicked.connect(self.btn_Home)
         self.btnJogadores.clicked.connect(self.btn_Jogadores) 
-        self.btnNoticias.clicked.connect(self.btn_Noticias)
+        self.btnNoticia.clicked.connect(self.btn_Noticias)
 
         # Gerar os cards de notícias e exibir a primeira notícia
         self.listaDeCards = self.raspador.gerarCardsDeNoticias()
@@ -83,8 +83,6 @@ class MeuApp(QMainWindow):
     def btn_Fechar(self):
         self.close()
 
-    
-
 
     # Função para mostrar a história
     def btn_Historia(self):
@@ -100,7 +98,10 @@ class MeuApp(QMainWindow):
 
     # Função para mostrar as notícias
     def btn_Noticias(self):
-        pass
+        texto = self.raspador.get_noticiasFull(self.link_noticia)
+        self.btnResumo.clear()
+        self.btnResumo.setText(texto)
+        
     
 
 if __name__ == '__main__':
