@@ -31,10 +31,6 @@
   <property name="windowTitle">
    <string>App_Futebol</string>
   </property>
-  <property name="windowIcon">
-   <iconset>
-    <normaloff>App_futebol.ico</normaloff>App_futebol.ico</iconset>
-  </property>
   <property name="toolTipDuration">
    <number>12</number>
   </property>
@@ -128,9 +124,9 @@ QPushButton:pressed {
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>110</y>
+       <y>100</y>
        <width>871</width>
-       <height>371</height>
+       <height>391</height>
       </rect>
      </property>
      <property name="font">
@@ -156,7 +152,7 @@ QStackedWidget:focus {
 </string>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>2</number>
      </property>
      <widget class="QWidget" name="home">
       <widget class="QTextEdit" name="btnResumoHome">
@@ -231,9 +227,9 @@ p, li { white-space: pre-wrap; }
        <property name="geometry">
         <rect>
          <x>0</x>
-         <y>0</y>
-         <width>831</width>
-         <height>341</height>
+         <y>40</y>
+         <width>841</width>
+         <height>321</height>
         </rect>
        </property>
        <property name="toolTipDuration">
@@ -255,6 +251,56 @@ p, li { white-space: pre-wrap; }
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:14px; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btnVoltar">
+       <property name="geometry">
+        <rect>
+         <x>710</x>
+         <y>0</y>
+         <width>121</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>14</pointsize>
+        </font>
+       </property>
+       <property name="toolTipDuration">
+        <number>14</number>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    background-color:  #ffc107;
+    color: white;
+    border: 2px solid #dc3545;
+    border-radius: 15px;
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-top: 0px;
+}
+
+QPushButton:hover {
+    background-color: #c82333;
+}
+
+QPushButton:pressed {
+    background-color: #bd2130;
+}
+</string>
+       </property>
+       <property name="text">
+        <string>Voltar</string>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>50</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="flat">
+        <bool>false</bool>
        </property>
       </widget>
      </widget>

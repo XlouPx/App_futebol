@@ -11,90 +11,107 @@ class MeuApp(QMainWindow):
         super().__init__()
         loadUi('interface.ui', self)
 
-        # Objeto de Raspagem
         self.raspagem = WebScraping()
-        
-        # Inicializar o índice da notícia atual com 0
         self.indice_noticia_atual = 0
-        
-        # Conectando o sinal clicked do botão ao método
-        self.btnProximo.clicked.connect(self.btn_Proximo)
-        self.btnAnterior.clicked.connect(self.btn_Anterior)
-        self.btnFechar.clicked.connect(self.btn_Fechar)
-        self.btnHome.clicked.connect(self.showHome)
-        self.btnHistoria.clicked.connect(self.showHistoria)
-        self.btnLerNoticias.clicked.connect(self.showLerNoticia)
-        self.btnNoticia.clicked.connect(self.showNoticias)
+        self.conectar_botoes()
+        self.lista_de_cards = self.gerar_cards_de_noticias()
+        self.exibir_noticia_atual()
+        self.show_home()
 
-        # Gerar os cards de notícias e exibir a primeira notícia
-        self.listaDeCards = self.gerarCardsDeNoticias()
-        self.exibirNoticiaAtual()
-        
-        # Conectar o botão para abrir o link da notícia
-        self.btnLink.clicked.connect(self.abrirLink)
-
-        # Deixa a interface (própria do Qt) transparente
+        self.btnLink.clicked.connect(self.abrir_link)
         self.setWindowFlags(Qt.FramelessWindowHint)
         self.setAttribute(Qt.WA_TranslucentBackground)
 
-    # Exibir a notícia atual no aplicativo
-    def exibirNoticiaAtual(self):
-        noticia_atual = self.listaDeCards[self.indice_noticia_atual]
+    def conectar_botoes(self):
+        # Conecta os botões aos métodos correspondentes
+        botoes_metodos = {
+            self.btnProximo: self.btn_proximo,
+            self.btnAnterior: self.btn_anterior,
+            self.btnVoltar: self.show_voltar,
+            self.btnFechar: self.btn_fechar,
+            self.btnHome: self.show_home,
+            self.btnHistoria: self.show_historia,
+            self.btnLerNoticias: self.show_ler_noticia,
+            self.btnNoticia: self.show_noticias
+        }
+
+        for botao, metodo in botoes_metodos.items():
+            botao.clicked.connect(metodo)
+
+    def gerar_cards_de_noticias(self):
+        # Gera os cards de notícias
+        return self.raspagem.gerar_cards_de_noticias()
+
+    def exibir_noticia_atual(self):
+        # Exibe a notícia atual na interface
+        noticia_atual = self.lista_de_cards[self.indice_noticia_atual]
         titulo, resumo, link = noticia_atual
-        self.setTitulo(titulo)  
-        self.setResumo(resumo)  
-        self.setLink(link)   
-                                
-    # Atualizar a exibição para a próxima notícia
-    def btn_Proximo(self):
+        self.set_titulo(titulo)
+        self.set_resumo(resumo)
+        self.set_link(link)
+
+    def btn_proximo(self):
+        # Avança para a próxima notícia na lista
         self.indice_noticia_atual += 1
-        if self.indice_noticia_atual < len(self.listaDeCards):
-            self.exibirNoticiaAtual()
+        if self.indice_noticia_atual < len(self.lista_de_cards):
+            self.exibir_noticia_atual()
         else:
             self.indice_noticia_atual = 0
 
-    # Volta a exibição para a notícia anterior
-    def btn_Anterior(self):
+    def btn_anterior(self):
+        # Retrocede para a notícia anterior na lista
         self.indice_noticia_atual -= 1
         if self.indice_noticia_atual >= 0:
-            self.exibirNoticiaAtual()
+            self.exibir_noticia_atual()
         else:
-            self.indice_noticia_atual = len(self.listaDeCards) - 1
+            self.indice_noticia_atual = len(self.lista_de_cards) - 1
 
-    # Métodos para definir o título, resumo e link no aplicativo
-    def setTitulo(self, titulo):  
-        self.btnTitulo.setText(titulo)  
+    def exibir_noticia_completa(self):
+        # Obtém a notícia completa
+        noticia_completa = self.raspagem.get_noticias_full(self.link_noticia)
+        self.btnLerNoticia.setText(noticia_completa)
 
-    def setResumo(self, resumo):  
-        self.btnResumo.setText(resumo)  
+    def set_titulo(self, titulo):
+        # Define o título da notícia na interface
+        self.btnTitulo.setText(titulo)
 
-    def setLink(self, link):  
-        self.btnLink.setText("Acessar notícia")  
+    def set_resumo(self, resumo):
+        # Define o resumo da notícia na interface
+        self.btnResumo.setText(resumo)
+
+    def set_link(self, link):
+        # Define o link da notícia na interface
+        self.btnLink.setText("Acessar notícia")
         self.link_noticia = link
-        
-    # Método para abrir o link da notícia
-    def abrirLink(self):
+
+    def abrir_link(self):
+        # Abre o link da notícia no navegador padrão
         if hasattr(self, 'link_noticia'):
             QDesktopServices.openUrl(QUrl(self.link_noticia))
 
-    # Função para mostrar as notícias
-    def btnNoticias(self):
-        texto = self.raspagem.get_noticiasFull(self.link_noticias)
-    
-    # Função para fechar a janela
-    def btn_Fechar(self):
+    def btn_fechar(self):
+        # Fecha a janela do aplicativo
         self.close()
 
-    def showHome(self):
+    def show_home(self):
+        # Exibe a página inicial na interface
         self.stackedWidget.setCurrentIndex(0)
 
-    def showHistoria(self):
+    def show_historia(self):
+        # Exibe a página de histórias na interface
         self.stackedWidget.setCurrentIndex(1)
 
-    def showLerNoticia(self):
+    def show_ler_noticia(self):
+        # Exibe a página para ler notícias na interface do método exibir a notícia completa
         self.stackedWidget.setCurrentIndex(2)
+        self.exibir_noticia_completa()
 
-    def showNoticias(self):
+    def show_noticias(self):
+        # Exibe a página de notícias na interface
+        self.stackedWidget.setCurrentIndex(3)
+
+    def show_voltar(self):
+        # Exibe a página de notícias na interface
         self.stackedWidget.setCurrentIndex(3)
 
 if __name__ == '__main__':
