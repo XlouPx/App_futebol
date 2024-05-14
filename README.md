@@ -6,7 +6,7 @@
 ![PyQT5](https://img.shields.io/badge/Qt-%23217346.svg?style=for-the-badge&logo=Qt&logoColor=white)
 ![SO](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)
 
-<img src="fotoExemplo.png"  alt=" tela inicial do App_Futebol">
+<img src="fotoExemplo.png"  alt=" tela inicial do App_Futebol - (Prototipo)">
 </div>
 <br>
 
@@ -34,9 +34,8 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 
 - [x] Interface Gráfica
 - [x] Layout do App
-- [x] Web Scraping
-- [x] Ajustar tamanho da fonte do display
-- [ ] ajustar Layout do App
+- [ ] Web Scraping
+- [ ] Ajustar tamanho da fonte do display
 
 ## 🚀 Instalando App_Futebol
 
