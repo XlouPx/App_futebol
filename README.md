@@ -25,17 +25,19 @@ Antes de começar, verifique se você atendeu aos seguintes requisitos:
   
 - Instalação das dependendias:
     - `PyQt5`
-    - `Selenium `
+    - `Requests `
+    - `BeautifulSoup4 `
     - `Auto-Py-To-Exe`
 
 ### Ajustes e melhorias
 
 O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas nas seguintes tarefas:
 
-- [x] Interface Gráfica
-- [x] Layout do App
-- [ ] Web Scraping
-- [ ] Ajustar tamanho da fonte do display
+- [X] Interface Gráfica
+- [X] Layout do App
+- [X] Web Scraping
+- [X] Ajustar tamanho da fonte do display
+- [X] Melhorias na Interface Gráfica
 
 ## 🚀 Instalando App_Futebol
 
@@ -46,6 +48,8 @@ Windows:
 python -m venv env
 env\Scripts\Activate.ps1
 python -m pip install pyqt5
+python -m pip install requests
+python -m pip install BeautifulSoup4
 python -m pip install auto-py-to-exe
 ```
 MacOS | Linux:
@@ -53,7 +57,10 @@ MacOS | Linux:
 python3 -m venv env
 source env/bin/activate
 python3 -m pip install pyqt5
+python3 -m pip install requests
+python3 -m pip install BeautifulSoup4
 python3 -m pip install auto-py-to-exe
+
 ```
 
 ## ☕ Usando o App_Futebol
@@ -64,9 +71,9 @@ Para usar o App_Futebol, siga estas etapas:
 python main.py  ||  python3 main.py
 ```
 
-## 📫 Contribuindo para Calculadora Iphone
+## 📫 Contribuindo para o App_Futebol
 
-Para contribuir com Calculadora Iphone, siga estas etapas:
+Para contribuir com App_Futebol, siga estas etapas:
 
 1. Bifurque este repositório.
 2. Crie um branch: `git checkout -b App_futebol`.
@@ -82,14 +89,14 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
 
 <table style="float: left;">
   <tr>
-    <td align="center">
+    <td align="left">
       <a href="#" title="Bruno Mendes">
         <img src="https://avatars.githubusercontent.com/u/78379724?s=96&v=4" width="100px" alt="Foto do XlouPx no GitHub"/><br>
       </a>
     </td>
   </tr>
 </table>
-<table style="float: left;">
+<table style="float: center;">
   <tr>
     <td align="center">
       <a href="#" title="Nickolas">

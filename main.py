@@ -1,67 +1,126 @@
-from PyQt5.QtWidgets import QApplication, QMainWindow, QTextBrowser, QMessageBox
+import requests
+from os import path
+from bs4 import BeautifulSoup
+from PyQt5.QtWidgets import *
 from PyQt5.uic import loadUi
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-import os
+from PyQt5.QtCore import QUrl, Qt
+from PyQt5.QtGui import QDesktopServices
+from raspagem import WebScraping
+
 
 class MeuApp(QMainWindow):
     def __init__(self):
         super().__init__()
         loadUi(self.localPath('interface.ui'), self)
-        self.pushButton.clicked.connect(self.iniciar_raspagem)
+
+        self.raspagem = WebScraping()
+        self.indice_noticia_atual = 0
+        self.conectar_botoes()
+        self.lista_de_cards = self.gerar_cards_de_noticias()
+        self.exibir_noticia_atual()
+        self.show_home()
+
+        self.btnLink.clicked.connect(self.abrir_link)
+        self.setWindowFlags(Qt.FramelessWindowHint)
+        self.setAttribute(Qt.WA_TranslucentBackground)
 
     def localPath(self, relativo):
-        return os.path.join(os.path.dirname(os.path.realpath(__file__)), relativo)
+        return f'{path.dirname(path.realpath(__file__))}\\{relativo}'
 
-    def iniciar_raspagem(self):
-        self.textBrowser.clear()
-        self.textBrowser.append("Iniciando a Coleta de dados...")
-        self.executar_raspagem()
+    def conectar_botoes(self):
+        # Conecta os botões aos métodos correspondentes
+        botoes_metodos = {
+            self.btnProximo: self.btn_proximo,
+            self.btnAnterior: self.btn_anterior,
+            self.btnVoltar: self.show_voltar,
+            self.btnFechar: self.btn_fechar,
+            self.btnHome: self.show_home,
+            self.btnHistoria: self.show_historia,
+            self.btnLerNoticias: self.show_ler_noticia,
+            self.btnNoticia: self.show_noticias
+        }
 
-    def executar_raspagem(self):
-        chrome_options = webdriver.ChromeOptions()
-        chrome_options.add_argument('--start-minimized')
+        for botao, metodo in botoes_metodos.items():
+            botao.clicked.connect(metodo)
 
-        try:
-            # Criando e configurando o driver do Chrome
-            driver = webdriver.Chrome(options=chrome_options)
-            driver.minimize_window()
-            driver.get('https://www.playscores.com/scanner-futebol-online/ao-vivo')
-            driver.implicitly_wait(10)
-            
-            # Encontrando os elementos dos jogos
-            elements = driver.find_elements(By.CSS_SELECTOR, 'app-fixture-list-line.ng-star-inserted')
-            total_jogos = len(elements)
+    def gerar_cards_de_noticias(self):
+        # Gera os cards de notícias
+        return self.raspagem.gerar_cards_de_noticias()
 
-            # Processando as informações dos jogos
-            dados = [self.processar_informacoes_jogo(jogo, indice) for indice, jogo in enumerate(elements, start=1)]
-            self.mostrar_resultados(dados, total_jogos)
+    def exibir_noticia_atual(self):
+        # Exibe a notícia atual na interface
+        noticia_atual = self.lista_de_cards[self.indice_noticia_atual]
+        titulo, resumo, link = noticia_atual
+        self.set_titulo(titulo)
+        self.set_resumo(resumo)
+        self.set_link(link)
 
-        except Exception as e:
-            QMessageBox.critical(self, "Erro", f"Erro ao iniciar a raspagem: {e}")
-        finally:
-            driver.quit()
+    def btn_proximo(self):
+        # Avança para a próxima notícia na lista
+        self.indice_noticia_atual += 1
+        if self.indice_noticia_atual < len(self.lista_de_cards):
+            self.exibir_noticia_atual()
+        else:
+            self.indice_noticia_atual = 0
 
-    def processar_informacoes_jogo(self, jogo, indice):
-        try:
-            # Dividindo as linhas de informações do jogo
-            linhas = jogo.text.split('\n')
-            # Extraindo as informações relevantes
-            inf = [linha.split(':')[-1].strip() for linha in linhas[1:]]
-            # Verificando se todas as informações necessárias estão presentes
-            if all(inf[2:4]):
-                return f'<p>{indice}. Jogo: {inf[0]} x {inf[1]}  Placar: {inf[2]} - {inf[3]}</p>\n'
-        except Exception as e:
-            print(f"Erro ao processar informações do jogo: {e}")
-        return None
+    def btn_anterior(self):
+        # Retrocede para a notícia anterior na lista
+        self.indice_noticia_atual -= 1
+        if self.indice_noticia_atual >= 0:
+            self.exibir_noticia_atual()
+        else:
+            self.indice_noticia_atual = len(self.lista_de_cards) - 1
 
-    def mostrar_resultados(self, dados, total_jogos):
-        self.textBrowser.clear()
-        self.textBrowser.append(f"Total de jogos encontrados: {total_jogos}\n")
-        self.textBrowser.append('\n'.join(filter(None, dados)))
+    def exibir_noticia_completa(self):
+        # Obtém a notícia completa
+        noticia_completa = self.raspagem.get_noticias_full(self.link_noticia)
+        self.btnLerNoticia.setText(noticia_completa)
+
+    def set_titulo(self, titulo):
+        # Define o título da notícia na interface
+        self.btnTitulo.setText(titulo)
+
+    def set_resumo(self, resumo):
+        # Define o resumo da notícia na interface
+        self.btnResumo.setText(resumo)
+
+    def set_link(self, link):
+        # Define o link da notícia na interface
+        self.btnLink.setText("Acessar notícia")
+        self.link_noticia = link
+
+    def abrir_link(self):
+        # Abre o link da notícia no navegador padrão
+        if hasattr(self, 'link_noticia'):
+            QDesktopServices.openUrl(QUrl(self.link_noticia))
+
+    def btn_fechar(self):
+        # Fecha a janela do aplicativo
+        self.close()
+
+    def show_home(self):
+        # Exibe a página inicial na interface
+        self.stackedWidget.setCurrentIndex(0)
+
+    def show_historia(self):
+        # Exibe a página de histórias na interface
+        self.stackedWidget.setCurrentIndex(1)
+
+    def show_ler_noticia(self):
+        # Exibe a página para ler notícias na interface do método exibir a notícia completa
+        self.stackedWidget.setCurrentIndex(2)
+        self.exibir_noticia_completa()
+
+    def show_noticias(self):
+        # Exibe a página de notícias na interface
+        self.stackedWidget.setCurrentIndex(3)
+
+    def show_voltar(self):
+        # Exibe a página de notícias na interface
+        self.stackedWidget.setCurrentIndex(3)
 
 if __name__ == '__main__':
     app = QApplication([])
-    janela = MeuApp()
-    janela.show()
+    window = MeuApp()
+    window.show()
     app.exec_()
