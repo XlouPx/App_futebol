@@ -38,6 +38,18 @@
    <string notr="true">background-color: white;</string>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="minimumSize">
+    <size>
+     <width>900</width>
+     <height>600</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>900</width>
+     <height>600</height>
+    </size>
+   </property>
    <property name="toolTipDuration">
     <number>12</number>
    </property>
@@ -55,17 +67,28 @@
       <x>0</x>
       <y>0</y>
       <width>900</width>
-      <height>501</height>
+      <height>600</height>
      </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>900</width>
+      <height>600</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>900</width>
+      <height>600</height>
+     </size>
     </property>
     <property name="toolTipDuration">
      <number>12</number>
     </property>
     <property name="styleSheet">
-     <string notr="true">QWidget {
-    background-color: #f8f9fa;
+     <string notr="true">QGroupBoxt {
+    background-color: c0c1c1 ;
     color: #343a40;
-
     padding: 10px;
     font-size: 14px;
 }</string>
@@ -81,7 +104,7 @@
      </property>
      <property name="font">
       <font>
-       <pointsize>12</pointsize>
+       <pointsize>14</pointsize>
       </font>
      </property>
      <property name="toolTipDuration">
@@ -89,13 +112,13 @@
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
-    background-color: #dc3545;
+    background-color:  #ffc107;
     color: white;
     border: 2px solid #dc3545;
     border-radius: 15px;
     padding: 10px 20px;
     font-size: 16px;
-    margin-top: 10px;
+    margin-top: 0px;
 }
 
 QPushButton:hover {
@@ -131,15 +154,15 @@ QPushButton:pressed {
      </property>
      <property name="font">
       <font>
-       <pointsize>12</pointsize>
+       <pointsize>14</pointsize>
       </font>
      </property>
      <property name="toolTipDuration">
       <number>12</number>
      </property>
      <property name="styleSheet">
-      <string notr="true">QTextEdit {
-    background-color: white;
+      <string notr="true">stackedWidget {
+    background-color:#c0c1c1 ;
     color: black;
     border: 2px solid #ccc;
     border-radius: 20px;
@@ -147,24 +170,14 @@ QPushButton:pressed {
     font-size: 14px;
 }
 
-QTextEdit[htmlText=&quot;true&quot;] {
-    background-color: #f8f9fa;
-    color: #343a40;
-    border: 2px solid #6c757d;
-    border-radius: 20px;
-    padding: 8px;
-    font-size: 14px;
-    border: none;
-}
-
-QTextEdit:focus {
+stackedWidget:focus {
     border: 2px solid #007bff;
 }
 
 </string>
      </property>
      <property name="currentIndex">
-      <number>3</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="home">
       <widget class="QTextEdit" name="btnResumoHome">
@@ -172,8 +185,8 @@ QTextEdit:focus {
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>831</width>
-         <height>341</height>
+         <width>851</width>
+         <height>371</height>
         </rect>
        </property>
        <property name="toolTipDuration">
@@ -205,13 +218,58 @@ QTextEdit:focus {
 
 </string>
        </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
        <property name="html">
         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:14px; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;Home&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;chat-pane-list&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;⠀&lt;/span&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⣿⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&lt;br /&gt;⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣴⣾⣿⣿⣤⣿⣿⣗⣦⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&lt;br /&gt;⠀⠀⠀⠀⠀⠀⢠⣴⣿⣿⣿⣿⣋⣥⣼⣿⣧⣬⣙⣯⣿⣿⣿⣦⡄⠀⠀⠀⠀⠀⠀&lt;br /&gt;⠀⠀⠀⠀⠀⢰⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡆⠀⠀⠀⠀⠀&lt;br /&gt;⠀⠀⠀⠀⠀⣾⣿⣿⢿⣿⣽⣿⣿⣽⢿⣿⡿⣯⣿⣿⣥⣿⡿⣿⣿⣿⠀⠀⠀⠀⠀&lt;br /&gt;⠀⠀⠀⠀⠀⢿⣽⡿⣾⣏⣭⣿⣺⣿⠶⣶⠶⣾⣓⣾⣭⣙⣷⣿⣯⡿⠀⠀⠀⠀⠀&lt;br /&gt;⠀⠀⠀⠀⠀⠀⠀⠸⢿⣿⣿⡿⠾⠿⠟⠛⠻⠿⠶⢿⣯⣿⣿⠏⠀⠀⠀⠀⠀⠀⠀&lt;br /&gt;⠀⠀⠀⠀⠀⠀⣠⡴⠛⢋⣤⡤⠶⠒⠒⠒⠒⠒⠶⢤⣤⡙⠛⢶⣄⡀⠀⠀⠀⠀⠀&lt;br /&gt;⠀⠀⠀⢀⣴⠟⢁⣴⣺⣯⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣭⣟⣦⡈⠻⣦⡀⠀⠀⠀&lt;br /&gt;⠀⠀⢠⡾⢁⣴⣿⠟⢡⡄⠙⢦⣀⣀⣀⣀⣀⣀⢀⡴⠋⣀⡈⠻⣿⣦⡈⢳⣄⠀⠀&lt;br /&gt;⠀⣰⡏⢰⣯⡟⢁⣴⣿⣿⡦⠀⠉⣉⣀⣀⣀⡉⠉⠀⣾⡋⠙⢦⡈⢻⣽⡆⢹⣆⠀&lt;br /&gt;⢠⡏⢰⣯⡏⢠⣿⣿⣿⠋⣠⣶⣦⡈⠻⣦⠟⢁⡴⢶⡀⢹⣆⠈⢳⡄⢹⣽⡆⢹⡆&lt;br /&gt;⣼⠁⡾⡼⢀⡟⢿⣿⠁⣸⣿⣿⣿⣿⣦⣀⣴⣏⠀⠀⠹⠟⠁⠀⠀⢷⠀⢷⢳⠈⣧&lt;br /&gt;⣿⢠⣷⡇⢸⡇⢠⣇⢰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⡀⠀⠀⠀⠀⠀⢸⡇⢸⣾⡆⢻&lt;br /&gt;⣿⠸⣿⡇⢸⡇⠘⡏⢸⡟⢿⣿⣿⣿⠀⣤⣤⣼⣿⣿⣦⡀⠀⠀⠀⢸⡇⢸⣿⠇⣸&lt;br /&gt;⢿⡀⣧⢧⠘⣇⠀⢻⡄⢻⣄⠙⢿⣿⠀⠛⠛⢻⣿⣿⣿⣿⣦⡀⠀⡼⠀⡼⣸⠀⡿&lt;br /&gt;⠸⣇⠸⡾⣇⠸⣆⠀⠻⣄⠙⠶⣄⣿⠀⣿⣿⣿⣿⠟⠙⣿⣿⣿⡾⠃⣰⢷⠇⣸⡇&lt;br /&gt;⠀⢻⣆⠹⣿⣦⣸⠗⠀⠈⠳⢦⣀⡉⠀⠉⠉⢉⣀⣴⣾⣿⣿⣿⣅⣰⣿⠏⣰⡟⠀&lt;br /&gt;⠀⠀⠹⣦⠙⢯⡁⠀⠀⠀⠀⠀⠈⣿⠀⣿⠋⠛⢿⣿⣿⣿⣿⣿⣟⡷⠋⣰⠟⠀⠀&lt;br /&gt;⠀⠀⠀⠘⢷⣄⠙⢦⣄⠀⠀⠀⠀⠙⠛⠋⠀⠀⠀⠻⣿⡿⣻⡵⠋⣠⡾⠃⠀⠀⠀&lt;br /&gt;⠀⠀⠀⠀⠀⠉⠻⢦⣈⠙⠳⠦⣄⣀⣀⣀⣀⣀⣠⠤⠞⠋⣁⣴⠟⠋⠀⠀⠀⠀⠀&lt;br /&gt;⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⠲⠶⢤⣤⣄⣀⣠⣤⡤⠶⠶⠛⠉⠀⠀⠀⠀⠀⠀⠀&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣴⣶⣶⣶⣤⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⣿⣿⣿⣿⣿⣿⣷⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⣿⣿⣿⣿⣿⣿⣿⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣿⣿⣿⣿⣿⣾⡋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡴⠻⠿⠻⠿⠻⢤⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⢀⢤⣒⣽⢍⣸⣷⣶⣉⣁⣀⠑⠤⠤⢀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⢎⣨⡟⣉⣄⣴⡎⣳⡏⡏⣡⡦⣼⠋⣷⢦⣠⣫⠳⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⢿⣅⠈⢹⡿⣼⡟⠷⣟⡷⢥⢷⢿⣻⢾⠇⣴⢮⡏⠆⢹⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡸⣾⣟⠈⠉⠊⡇⣤⣤⣭⣭⣷⢹⢸⢀⢹⣸⣿⢿⣾⣶⡳⡿⣻⣃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⡎⣧⡾⣾⣆⢧⢰⢷⣿⡟⢿⠟⣿⣿⢠⣮⣙⣶⠏⣿⣿⣯⣮⡞⢯⣿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⢯⣍⣶⡽⣿⡿⢦⠻⢸⠘⢇⡨⣸⣿⢿⡾⡏⠿⠤⠞⠸⣿⣛⣹⡴⢮⣻⣿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣴⠟⣜⣿⣿⢿⡽⠋⠀⠘⣆⠀⠇⠸⣡⣿⣿⢘⠇⡇⠸⠇⠀⡀⡽⣿⣿⣋⣩⣶⣿⣷⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣾⠟⣌⢦⣿⢡⡿⠊⠀⠀⠀⠀⠸⣆⡀⠀⢻⣿⣿⠈⠀⠀⠀⠀⢘⣼⣿⣷⢇⢻⣥⣿⣻⣮⢿⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡴⡛⣡⣿⣿⣿⡿⠋⠀⠀⠀⠀⠀⠀⠀⢻⣙⠀⣾⣿⡧⡀⠀⠀⠀⣠⢾⣿⣿⡯⣿⡀⠹⣷⠃⠈⢷⣿⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;⠀⠀⠀⠀⠀⠀⠀⢀⣴⣟⣽⣿⣿⣿⠟⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠳⡃⠿⢟⣒⠾⣤⣔⠮⣖⣽⢿⣿⢷⣹⣵⠀⠘⢦⡀⠀⢹⣮⣿⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;⠀⠀⠀⠀⠀⢀⣴⣿⢻⣽⣿⠿⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀⠙⠶⣶⡚⢽⣦⡬⣭⣾⣯⣬⣏⣈⠁⢷⣧⠀⠀⠙⠢⣜⠸⠻⣿⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;⠀⠀⢀⣴⣶⡿⣯⢿⡿⠚⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⡶⡒⣾⣛⣿⣝⣛⡛⠒⠊⣀⢰⠻⠫⢬⣩⣯⡆⠀⠀⠀⠈⠳⣄⢩⠻⣿⢷⣦⣠⠤⣴⡶⠶⠀⠀⠀⠀⠀&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;⠀⣰⣿⣿⣿⣿⠞⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⢿⠀⣨⢯⢾⠚⣿⡙⢫⢉⠭⡏⢙⣿⡥⠿⢧⠁⠀⠀⠀⠀⠀⠈⠙⢾⣿⣟⣭⣥⣔⣧⣀⠀⠀⠀⠀⠀⠀&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;⣸⣿⡿⣿⠏⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡘⠸⠐⠃⣨⡟⢸⢹⢸⢸⠏⣠⠟⢥⡿⢛⣷⣮⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⣷⣻⣯⣿⡻⠿⣦⡄⠀⠀⠀&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;⠻⠿⢱⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠆⠰⡀⠰⠛⣡⣿⢠⢣⡌⢐⣃⣉⡡⠶⡥⢷⣮⣿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⣿⣻⣿⣶⣄⠀⠀⠀⠀&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⢀⡀⡧⠀⢰⠏⢸⠃⢎⣣⡯⠖⣟⢴⣊⣴⠿⠥⡽⣿⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠇⠙⠋⠁⠀⠀⠀⠀&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⡇⢳⡷⣢⠀⠈⠑⠼⣀⠜⠁⠙⣊⢝⣿⣯⠵⠶⢤⣴⠹⣷⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⢣⢇⡀⠙⢮⡑⠢⠤⠀⢻⠶⢖⣿⣷⣿⡿⠒⠢⣪⠟⡁⠀⠹⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⢇⠘⠸⡍⡻⣶⡽⠦⠤⠒⢃⣠⣜⣻⠽⣭⡶⣦⡏⡤⠖⣽⡤⠀⢻⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡾⡏⣀⣀⡽⣑⣢⣕⣄⠤⡶⣽⠏⠉⠉⠉⠲⣤⣍⣈⠕⠪⢅⣠⡠⢤⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⢷⡶⣂⣼⣿⢀⠀⠀⠀⣰⢯⠋⠀⠀⠀⠀⠀⢹⣾⣗⣾⠽⠓⠛⡿⡋⢹⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⠀⠘⣿⣿⣭⡽⠗⠚⠛⠛⠋⠀⠀⠀⠀⠀⠀⠈⠉⠙⢧⠀⠀⠀⠘⢟⡟⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⠋⠀⢈⣿⣿⡟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠳⡀⠀⠀⢈⡖⢸⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣼⣥⣀⠠⣿⣿⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢳⣀⣴⣶⣷⣶⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠗⠈⠑⢮⣿⡾⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⡟⠋⠁⠘⡌⠙⢆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣼⢋⠀⠄⢱⡿⡟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢩⠁⠀⢛⣱⡀⠈⢆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡮⣤⣦⡀⢀⡾⡝⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⡆⠖⠋⠁⢣⠀⠈⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⠃⡰⠉⣳⣾⡝⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⡾⠋⠠⠈⣆⠀⠸⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡜⠀⠀⢠⣾⡿⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠣⡀⠀⠈⠀⠀⢱⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⢁⢤⣰⣿⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⣄⠀⠀⠀⠀⢇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠃⣮⣿⡿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢆⠀⠀⣀⠘⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠎⢤⡿⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢣⢊⠬⠆⠑⣄⠀⠀⠀⠀⠀⠀⠀⠀&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;⠀⠀⠀⠀⠀⠀⠀⠀⣰⣿⣿⡿⣥⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢦⣶⡒⢶⡞⠢⣄⠀⠀⠀⠀⠀⠀&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;⠀⠀⠀⠀⠀⠀⣠⣾⣛⡏⡻⣳⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⢿⣿⣿⣾⢷⣿⣿⣶⣯⡿⢆⡀&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;⠀⠀⠀⠀⠀⠀⠉⠉⠚⠚⠛⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⠦⠿⠿⠿⠿⠿⠿⠿⠿⠷⠷⠾&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
      </widget>
@@ -224,8 +282,8 @@ p, li { white-space: pre-wrap; }
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>831</width>
-         <height>341</height>
+         <width>851</width>
+         <height>371</height>
         </rect>
        </property>
        <property name="toolTipDuration">
@@ -239,6 +297,7 @@ p, li { white-space: pre-wrap; }
     border-radius: 20px;
     padding: 10px;
     font-size: 14px;
+
 }
 
 QTextEdit[htmlText=&quot;true&quot;] {
@@ -257,12 +316,29 @@ QTextEdit:focus {
 
 </string>
        </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
        <property name="html">
         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:14px; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;Historia&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;A história do Real Madrid é uma saga rica e emocionante, repleta de conquistas, rivalidades e momentos lendários. Fundado em 1902 como &amp;quot;Madrid Football Club&amp;quot;, o clube recebeu o título de &amp;quot;Real&amp;quot; (que significa &amp;quot;real&amp;quot; em espanhol) em 1920, concedido pelo rei Afonso XIII da Espanha. Aqui está uma visão geral de alguns dos momentos mais significativos na história deste gigante do futebol:&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;1. **Primeiros Anos**: O Real Madrid começou como um clube pequeno, mas rapidamente se tornou um dos mais proeminentes da Espanha. No entanto, foi na década de 1950 que o clube realmente decolou.&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;2. **Era de Ouro de Di Stéfano**: Durante a década de 1950, o Real Madrid dominou o futebol europeu com a ajuda de lendas como Alfredo Di Stéfano, Ferenc Puskás e Francisco Gento. O clube conquistou a então recém-criada Liga dos Campeões da UEFA por cinco vezes consecutivas, de 1956 a 1960.&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;3. **A rivalidade com o Barcelona**: A rivalidade entre o Real Madrid e o Barcelona, conhecida como &amp;quot;El Clásico&amp;quot;, é uma das mais intensas do mundo do futebol. Essa rivalidade transcende o campo e tem profundas raízes políticas e culturais.&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;4. **Era Galáctica**: Nos primeiros anos do século XXI, o Real Madrid montou uma equipe estelar, conhecida como &amp;quot;Galácticos&amp;quot;, com jogadores como Zinedine Zidane, Ronaldo Nazário, Luís Figo e David Beckham. Eles conquistaram a Liga dos Campeões em 2002, sob a liderança de Vicente del Bosque.&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;5. **Era de Cristiano Ronaldo**: A chegada de Cristiano Ronaldo ao clube em 2009 marcou uma nova era de sucesso. Com Ronaldo liderando o ataque, o Real Madrid conquistou quatro Liga dos Campeões em cinco anos, de 2014 a 2018, além de inúmeros títulos nacionais.&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;6. **Bernabéu e o Legado**: O estádio Santiago Bernabéu, casa do Real Madrid, é um símbolo icônico do clube e do futebol mundial. Além disso, o Real Madrid tem uma história de desenvolvimento de jovens talentos, como Raúl González, Iker Casillas e mais recentemente, Sergio Ramos.&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;O Real Madrid continua sendo um dos clubes mais bem-sucedidos e populares do mundo, com uma legião de fãs globalmente e uma história que continua a ser escrita.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
      </widget>
@@ -270,10 +346,10 @@ p, li { white-space: pre-wrap; }
       <widget class="QTextEdit" name="btnLerNoticia">
        <property name="geometry">
         <rect>
-         <x>0</x>
-         <y>40</y>
-         <width>841</width>
-         <height>321</height>
+         <x>40</x>
+         <y>0</y>
+         <width>811</width>
+         <height>371</height>
         </rect>
        </property>
        <property name="toolTipDuration">
@@ -304,6 +380,9 @@ QTextEdit:focus {
 }
 
 </string>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
        </property>
        <property name="html">
         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -316,15 +395,16 @@ p, li { white-space: pre-wrap; }
       <widget class="QPushButton" name="btnVoltar">
        <property name="geometry">
         <rect>
-         <x>710</x>
+         <x>0</x>
          <y>0</y>
-         <width>121</width>
-         <height>41</height>
+         <width>31</width>
+         <height>371</height>
         </rect>
        </property>
        <property name="font">
         <font>
-         <pointsize>12</pointsize>
+         <pointsize>14</pointsize>
+         <kerning>false</kerning>
         </font>
        </property>
        <property name="toolTipDuration">
@@ -351,13 +431,7 @@ QPushButton:pressed {
 </string>
        </property>
        <property name="text">
-        <string>Voltar</string>
-       </property>
-       <property name="iconSize">
-        <size>
-         <width>50</width>
-         <height>50</height>
-        </size>
+        <string>&lt;</string>
        </property>
        <property name="flat">
         <bool>false</bool>
@@ -371,10 +445,10 @@ QPushButton:pressed {
       <widget class="QPushButton" name="btnLink">
        <property name="geometry">
         <rect>
-         <x>70</x>
-         <y>290</y>
+         <x>40</x>
+         <y>330</y>
          <width>321</width>
-         <height>51</height>
+         <height>41</height>
         </rect>
        </property>
        <property name="toolTipDuration">
@@ -382,21 +456,21 @@ QPushButton:pressed {
        </property>
        <property name="styleSheet">
         <string notr="true">QPushButton {
-    background-color: #4e7dab;
+    background-color: #0d6efd;
     color: white;
-    border: 2px solid #4e7dab;
+    border: 2px solid #dc3545;
     border-radius: 15px;
     padding: 10px 20px;
     font-size: 16px;
-    margin-top: 10px;
+    margin-top: 0px;
 }
 
 QPushButton:hover {
-    background-color: #355d88; 
+    background-color: #c82333;
 }
 
 QPushButton:pressed {
-    background-color: #27415f;
+    background-color: #bd2130;
 }
 </string>
        </property>
@@ -407,10 +481,10 @@ QPushButton:pressed {
       <widget class="QTextEdit" name="btnResumo">
        <property name="geometry">
         <rect>
-         <x>70</x>
+         <x>40</x>
          <y>60</y>
-         <width>701</width>
-         <height>231</height>
+         <width>771</width>
+         <height>261</height>
         </rect>
        </property>
        <property name="toolTipDuration">
@@ -442,6 +516,9 @@ QTextEdit:focus {
 
 </string>
        </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
        <property name="html">
         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
@@ -453,15 +530,15 @@ p, li { white-space: pre-wrap; }
       <widget class="QPushButton" name="btnProximo">
        <property name="geometry">
         <rect>
-         <x>780</x>
-         <y>60</y>
-         <width>61</width>
-         <height>231</height>
+         <x>820</x>
+         <y>50</y>
+         <width>31</width>
+         <height>271</height>
         </rect>
        </property>
        <property name="font">
         <font>
-         <pointsize>12</pointsize>
+         <pointsize>14</pointsize>
         </font>
        </property>
        <property name="toolTipDuration">
@@ -469,21 +546,21 @@ p, li { white-space: pre-wrap; }
        </property>
        <property name="styleSheet">
         <string notr="true">QPushButton {
-    background-color: #ffc107;
-    color: #343a40;
-    border: 2px solid #ffc107;
+    background-color:  #ffc107;
+    color: white;
+    border: 2px solid #dc3545;
     border-radius: 15px;
     padding: 10px 20px;
     font-size: 16px;
-    margin-top: 10px;
+    margin-top: 0px;
 }
 
 QPushButton:hover {
-    background-color: #ffca28;
+    background-color: #c82333;
 }
 
 QPushButton:pressed {
-    background-color: #ffcd38;
+    background-color: #bd2130;
 }
 </string>
        </property>
@@ -498,9 +575,9 @@ QPushButton:pressed {
        <property name="geometry">
         <rect>
          <x>0</x>
-         <y>70</y>
-         <width>61</width>
-         <height>221</height>
+         <y>50</y>
+         <width>31</width>
+         <height>271</height>
         </rect>
        </property>
        <property name="minimumSize">
@@ -517,7 +594,7 @@ QPushButton:pressed {
        </property>
        <property name="font">
         <font>
-         <pointsize>12</pointsize>
+         <pointsize>14</pointsize>
         </font>
        </property>
        <property name="toolTipDuration">
@@ -525,21 +602,21 @@ QPushButton:pressed {
        </property>
        <property name="styleSheet">
         <string notr="true">QPushButton {
-    background-color: #ffc107;
-    color: #343a40;
-    border: 2px solid #ffc107;
+    background-color:  #ffc107;
+    color: white;
+    border: 2px solid #dc3545;
     border-radius: 15px;
     padding: 10px 20px;
     font-size: 16px;
-    margin-top: 10px;
+    margin-top: 0px;
 }
 
 QPushButton:hover {
-    background-color: #ffca28;
+    background-color: #c82333;
 }
 
 QPushButton:pressed {
-    background-color: #ffcd38;
+    background-color: #bd2130;
 }
 </string>
        </property>
@@ -553,9 +630,9 @@ QPushButton:pressed {
       <widget class="QTextEdit" name="btnTitulo">
        <property name="geometry">
         <rect>
-         <x>30</x>
+         <x>0</x>
          <y>0</y>
-         <width>781</width>
+         <width>851</width>
          <height>51</height>
         </rect>
        </property>
@@ -588,6 +665,9 @@ QTextEdit:focus {
 
 </string>
        </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
        <property name="html">
         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
@@ -599,10 +679,10 @@ p, li { white-space: pre-wrap; }
       <widget class="QPushButton" name="btnLerNoticias">
        <property name="geometry">
         <rect>
-         <x>450</x>
-         <y>290</y>
+         <x>480</x>
+         <y>330</y>
          <width>331</width>
-         <height>51</height>
+         <height>41</height>
         </rect>
        </property>
        <property name="toolTipDuration">
@@ -610,21 +690,21 @@ p, li { white-space: pre-wrap; }
        </property>
        <property name="styleSheet">
         <string notr="true">QPushButton {
-    background-color: #4e7dab;
+    background-color: #0d6efd;
     color: white;
-    border: 2px solid #4e7dab;
+    border: 2px solid #dc3545;
     border-radius: 15px;
     padding: 10px 20px;
     font-size: 16px;
-    margin-top: 10px;
+    margin-top: 0px;
 }
 
 QPushButton:hover {
-    background-color: #355d88; 
+    background-color: #c82333;
 }
 
 QPushButton:pressed {
-    background-color: #27415f;
+    background-color: #bd2130;
 }
 </string>
        </property>
@@ -639,9 +719,21 @@ QPushButton:pressed {
       <rect>
        <x>20</x>
        <y>10</y>
-       <width>871</width>
-       <height>111</height>
+       <width>900</width>
+       <height>600</height>
       </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>900</width>
+       <height>600</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>900</width>
+       <height>600</height>
+      </size>
      </property>
      <property name="toolTipDuration">
       <number>12</number>
@@ -690,21 +782,21 @@ QTextEdit:focus {
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
-    background-color: #0d6efd;
+    background-color:  #ffc107;
     color: white;
-    border: 2px solid #0d6efd;
+    border: 2px solid #dc3545;
     border-radius: 15px;
     padding: 10px 20px;
     font-size: 16px;
-    margin-top: 10px;
+    margin-top: 0px;
 }
 
-QPushButton:hover  {
-    background-color: #0b5ed7;
+QPushButton:hover {
+    background-color: #c82333;
 }
 
 QPushButton:pressed {
-    background-color: #0a58c2;
+    background-color: #bd2130;
 }
 </string>
      </property>
@@ -726,21 +818,21 @@ QPushButton:pressed {
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
-    background-color: #0d6efd;
+    background-color:  #ffc107;
     color: white;
-    border: 2px solid #0d6efd;
+    border: 2px solid #dc3545;
     border-radius: 15px;
     padding: 10px 20px;
     font-size: 16px;
-    margin-top: 10px;
+    margin-top: 0px;
 }
 
-QPushButton:hover  {
-    background-color: #0b5ed7;
+QPushButton:hover {
+    background-color: #c82333;
 }
 
 QPushButton:pressed {
-    background-color: #0a58c2;
+    background-color: #bd2130;
 }
 </string>
      </property>
@@ -762,21 +854,21 @@ QPushButton:pressed {
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
-    background-color: #0d6efd;
+    background-color:  #ffc107;
     color: white;
-    border: 2px solid #0d6efd;
+    border: 2px solid #dc3545;
     border-radius: 15px;
     padding: 10px 20px;
     font-size: 16px;
-    margin-top: 10px;
+    margin-top: 0px;
 }
 
-QPushButton:hover  {
-    background-color: #0b5ed7;
+QPushButton:hover {
+    background-color: #c82333;
 }
 
 QPushButton:pressed {
-    background-color: #0a58c2;
+    background-color: #bd2130;
 }
 </string>
      </property>
@@ -793,9 +885,6 @@ QPushButton:pressed {
    </widget>
   </widget>
  </widget>
- <resources>
-  <include location="files.qrc"/>
-  <include location="files1.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>
