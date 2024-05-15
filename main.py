@@ -1,4 +1,5 @@
 import requests
+from os import path
 from bs4 import BeautifulSoup
 from PyQt5.QtWidgets import *
 from PyQt5.uic import loadUi
@@ -6,10 +7,11 @@ from PyQt5.QtCore import QUrl, Qt
 from PyQt5.QtGui import QDesktopServices
 from raspagem import WebScraping
 
+
 class MeuApp(QMainWindow):
     def __init__(self):
         super().__init__()
-        loadUi('interface.ui', self)
+        loadUi(self.localPath('interface.ui'), self)
 
         self.raspagem = WebScraping()
         self.indice_noticia_atual = 0
@@ -21,6 +23,9 @@ class MeuApp(QMainWindow):
         self.btnLink.clicked.connect(self.abrir_link)
         self.setWindowFlags(Qt.FramelessWindowHint)
         self.setAttribute(Qt.WA_TranslucentBackground)
+
+    def localPath(self, relativo):
+        return f'{path.dirname(path.realpath(__file__))}\\{relativo}'
 
     def conectar_botoes(self):
         # Conecta os botões aos métodos correspondentes
